@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhrumil Mehta - Personal Brand</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #121212;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            margin-top: 20px;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+        h1 {
+            margin: 10px 0 5px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .wheel-container {
+            position: relative;
+            margin: 20px auto;
+            width: 300px;
+            height: 300px;
+            background: conic-gradient(#ff6384 0deg 51.4deg, #36a2eb 51.4deg 102.8deg, #ffcd56 102.8deg 154.2deg, #4bc0c0 154.2deg 205.6deg, #9966ff 205.6deg 257deg, #ff9f40 257deg 308.4deg, #ff6384 308.4deg 360deg);
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+        #spin {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            background: #ff6347;
+            color: white;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #spin:hover {
+            background: #ff4500;
+        }
+        .content-box {
+            margin-top: 30px;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        button.contact {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #00b894;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button.contact:hover {
+            background: #009f7a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="DM-logo.jpg" alt="Dhrumil Mehta Logo" class="logo">
+        <h1>Dhrumil Mehta</h1>
+        <p>Engineering Customer Journeys That Drive Growth</p>
+    </header>
+    <main>
+        <div class="wheel-container"></div>
+        <button id="spin">Spin the Wheel</button>
+        <div id="content" class="content-box"></div>
+    </main>
+
+    <script>
+        const sections = [
+            "Profile",
+            "Skills",
+            "Employment at Boutiqaat (CRM Specialist)",
+            "Employment at Mirraw Online Services",
+            "Education",
+            "Certifications",
+            "Download Resume"
+        ];
+        const details = [
+            "Results-driven Retention Marketing professional with 3+ years' experience boosting customer engagement and revenue through data-led strategies.",
+            "Expertise: CRM, Retention Marketing, Customer Segmentation, Omnichannel Marketing.",
+            "CRM Specialist at Boutiqaat: Scaled WhatsApp ROI from 14 to 23, automated campaigns reducing workload by 40%.",
+            "Assistant Manager at Mirraw: Built brand from scratch, scaled to $1.2M revenue, led 20-member cross-functional team.",
+            "B.Tech in Mechanical Engineering, University of Mumbai (2016-2020).",
+            "Certified in Hubspot Social Media Marketing.",
+            "<a href='DhrumilMehta-Resume.pdf' download><button class='contact'>Download My Resume</button><br><br>Feels like playing again, doesn’t it? That’s the magic I bring to customer journeys — making them come back for more.<br><br><button class='contact' onclick='window.location.href=\"mailto:dhrumilmehta2910@gmail.com\"'>Contact Me</button>"
+        ];
+
+        let spinCounter = 0;
+
+        document.getElementById("spin").addEventListener("click", () => {
+            if (spinCounter < sections.length) {
+                const content = document.getElementById("content");
+                content.innerHTML = `<h2>${sections[spinCounter]}</h2><p>${details[spinCounter]}</p>`;
+                spinCounter++;
+            } else {
+                alert("You've explored everything! 🎉");
+            }
+        });
+    </script>
+</body>
+</html>
